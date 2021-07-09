@@ -1,0 +1,27 @@
+{% extends "businesslisting/base.html" %}
+{% block content%}
+
+  <div class="container">
+  	<form method="POST">
+  	   {% csrf_token %}
+  		<fieldset class="from-group">
+  			<legend class="border-bottom mb-4">
+  		      Delete 
+  			</legend>
+  			<h2>Are You Sure! you want delete Listing "{{ object.name }}" ?</h2>
+  		</fieldset>
+
+  	
+  	   <button class="btn btn-outline-danger" type="submit"> Delete </button>
+       <a class="btn btn-outline-info" href="{% url 'list-detail' object.id %}">Cancel</a>
+   </form>
+  </div>
+  
+  
+{% endblock content %}
+
+
+
+
+
+ 

@@ -1,0 +1,31 @@
+{% extends "businesslisting/base.html" %}
+ {% block content%}
+
+   
+ <div class="card" >
+  <div class="card-body">
+     <h2>{{ object.name }}</h2>
+     <p class="cat"> Category:-{{ object.category }}</p>
+	 <p><b>Website</b>:-{{ object.website }}</p>
+     <p><b>Description:-</b>:-{{ object.description }}</p>
+     <p><b>Contact_No</b>:-{{ object.contact }}</p>
+     <p> <b>Email</b>:-{{ object.email }}</p>
+     <p class="add"> <b>Address</b>:-{{ object.address }}</p>
+     <p> <b>pincode</b>:-{{ object.pincode }}</p>
+     <p> <b>List By</b>:-{{ object.author }}</p>
+     <p> <b>List date</b>:-{{ object.date_posted }}</p>
+     {% if object.author == user %}
+       <a class= "btn btn-outline-secondary" href="{% url 'list-update' object.id %}">Update</a>
+
+        <a class= "btn btn-outline-danger" href="{% url 'list-delete' object.id %}">Delete</a>
+        
+     {% endif %}
+
+
+
+   </div>
+ </div>  
+
+  
+{% endblock content %}
+

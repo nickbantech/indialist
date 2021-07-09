@@ -1,0 +1,30 @@
+{% extends "businesslisting/base.html" %}
+ {% block content%}
+
+
+  <h1>Rediscover India</h1><br>
+  
+  {% for list in listing %}
+	 <div class="card" >
+	  <div class="card-body">
+	     <h2><a href="{% url 'list-detail' list.id %}">{{ list.name }}</a></h2>
+	     <p class="cat"> Category:-{{ list.category }}</p>
+  	     <p><b>Website</b>:-{{ list.website }}</p>
+	     <p><b>Contact_No</b>:-{{ list.contact }}</p>
+	     <p> <b>Email</b>:-{{ list.email }}</p>
+	     <p class="add"> <b>Address</b>:-{{ list.address }}</p>
+	     <p> <b>pincode</b>:-{{ list.pincode }}</p>
+	     <p> <b>List By</b>:-{{ list.author }}</p>
+	     <p> <b>List date</b>:-{{ list.date_posted }}</p>
+
+
+	   </div>
+     </div>  
+     <br>
+   {% endfor %} 
+{% endblock content %}
+
+
+
+
+

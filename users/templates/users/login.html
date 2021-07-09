@@ -1,0 +1,32 @@
+{% extends "businesslisting/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+
+  <div class="container">
+  	<form method="POST">
+  	   {% csrf_token %}
+  		<fieldset class="from-group">
+  			<legend class="border-bottom mb-4">
+  		       Log In
+  			</legend>
+  			{{ form|crispy }}
+  		</fieldset>
+
+  	
+  	   <button class="btn btn-outline-success" type="submit">   Login</button>
+   </form>
+  </div>
+  <div class="container">
+  	 <small>Need an account<br>
+           <a href="{% url 'register' %}">Clik Here</a>
+  	 </small>
+  	
+  </div>
+  
+{% endblock content %}
+
+
+
+
+
+ 
